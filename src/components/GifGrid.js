@@ -14,23 +14,25 @@ export const GifGrid = ( { category } ) => {
     
 
     return (
-        <div className='card-grid'>
-            <h3> { category } </h3>
-            <br />
+        <>
+            <h3 className="animate__animated animate__fadeIn"> { category } </h3>
+            
             { loading && <p className='animate__animated animate__flash'> Loading... </p>}
-
-            <div>
-                {
-                    images.map( (img) => {
-                        return(
-                            <GridGifItem 
-                                key={ img.id }
-                                { ...img }/>
-                        )
-                    })
-                }
+            
+            <div className="card-grid">
+                <div>
+                    {
+                        images.map( (img) => {
+                            return(
+                                <GridGifItem 
+                                    key={ img.id }
+                                    { ...img }/>
+                            )
+                        })
+                    }
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 
